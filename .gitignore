@@ -1,0 +1,24 @@
+# Python and local environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ipynb_checkpoints/
+# Generated scientific artifacts; publish through a versioned archive if required
+/Mmax_models/
+/Mmax_results/
+/Mmax_maps_results/
+/catboost_info/
+# Full spatial input is approximately 2 GB
+/Example data/Sample_area.txt
+# Generated synthetic input can be recreated using the supplied script
+/Example data/Sample_area_synthetic.csv
+# Local configuration and editor files
+.env
+.env.*
+.idea/
+.vscode/
+Thumbs.db
+.DS_Store
+*.log

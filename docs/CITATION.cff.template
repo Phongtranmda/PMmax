@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using these metadata. The associated manuscript is not yet published."
+type: software
+license: MIT
+title: "PMmax: earthquake maximum-magnitude modelling and mapping"
+authors:
+  - family-names: "Tran"
+    given-names: "Van Phong"
+    affiliation: "Institute of Earth Sciences, Vietnam Academy of Science and Technology"
+    email: "tvphong@ies.vast.vn"
+repository-code: "https://github.com/REPLACE_OWNER/REPLACE_REPOSITORY"
+# Add all software authors. Replace placeholders before copying to CITATION.cff.
+# Add version, date-released, software DOI, and preferred-citation
+# only when verified. Do not invent a paper DOI or author identity.

@@ -1,0 +1,18 @@
+name: Repository checks
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  syntax-and-example-schema:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check syntax and example schema (not a numerical test)
+        run: python scripts/check_repository.py
+      - name: Generate synthetic spatial input
+        run: python scripts/make_synthetic_mapping_example.py

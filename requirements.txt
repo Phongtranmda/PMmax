@@ -1,0 +1,14 @@
+# Direct runtime dependencies. Not a validated or frozen reproduction environment.
+# Capture exact versions from the environment used for the published results.
+numpy
+pandas
+matplotlib
+joblib
+shap
+torch
+scikit-learn
+xgboost
+lightgbm
+catboost
+rasterio
+openpyxl
