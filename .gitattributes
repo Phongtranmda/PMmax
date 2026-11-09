@@ -4,6 +4,7 @@
 *.yml text eol=lf
 *.txt text eol=lf
 *.xlsx binary
-*.pkl binary
+*.pkl filter=lfs diff=lfs merge=lfs -text
 *.png binary
-*.tif binary
+*.tif filter=lfs diff=lfs merge=lfs -text
+Example[[:space:]]data/Sample_area.txt filter=lfs diff=lfs merge=lfs -text

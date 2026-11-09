@@ -39,9 +39,11 @@ Mapping NaNs become zero before prediction. The supplied file contains missing v
 
 | Material | Local size | Publication handling |
 | --- | ---: | --- |
-| Training workbook | 1,384,093 bytes | Included locally and not ignored; confirm redistribution rights before committing |
-| Full mapping table | 2,027,395,256 bytes | Excluded from Git; publish in a persistent data archive with download instructions |
-| Fitted model directory | Several hundred MB | Excluded from Git; regenerate or archive the exact manuscript models |
-| Synthetic mapping example | 20 × 20 cells | Generated without copying observations; interface test only |
+| Training workbook | 1,384,093 bytes | Included in the repository; data licensing details remain to be documented |
+| Full mapping table | 2,027,395,256 bytes | Included through Git LFS at the original path |
+| Fitted model directory | Several hundred MB | Included through Git LFS in `Mmax_models/` |
+| Synthetic mapping example | 20 × 20 cells | Included; generated without copying observations; interface test only |
 
-**Author action required:** add the archive DOI/URL, data license, attribution, acquisition/preprocessing methods, and exact restoration paths here. No download link is currently available. A repository clone alone does not reproduce the full study-area maps. If data cannot be released, explain the restriction and access procedure; synthetic data do not reproduce the paper's findings.
+The example output maps are included in `Mmax_maps_results/` through Git LFS. Evaluation workbooks and figures are in `Mmax_results/`, and training logs are in `catboost_info/`. Download the complete repository using the Git LFS instructions in README. These files are the supplied example artifacts; no new training or scientific reproduction was performed during upload.
+
+**Author action required:** document the data license, attribution and acquisition/preprocessing methods. Add an archive DOI if one is later assigned. Synthetic data do not reproduce the paper's findings.

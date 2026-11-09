@@ -2,7 +2,7 @@
 
 ## 1. Current status
 
-The repository includes installation and usage instructions, data specifications, Python dependencies, reproducibility notes, citation metadata, an MIT license, Git configuration, issue and pull request templates, and automated repository checks. Both original scripts retain their names. Tool 2 now uses `mmax_prediction.py` to fix inconsistent feature names within saved stacking models; include this module when publishing or copying the software. Training logic and saved model weights are unchanged. No repository, commit, release or online upload has been created during this preparation.
+The repository includes installation and usage instructions, data specifications, Python dependencies, reproducibility notes, citation metadata, an MIT license, Git configuration, issue and pull request templates, and automated repository checks. Both original scripts retain their names. Tool 2 now uses `mmax_prediction.py` to fix inconsistent feature names within saved stacking models; include this module when publishing or copying the software. Training logic and saved model weights are unchanged. The public repository is https://github.com/Phongtranmda/PMmax. Source code and supplied example data, trained models, maps, figures, evaluation workbooks and logs are published; no versioned release is claimed.
 
 **Software author and copyright holder:** Tran Van Phong.
 
@@ -37,9 +37,9 @@ Update `CITATION.cff` with verified information. Use `docs/CITATION.cff.template
 
 GitHub blocks files larger than 100 MiB in regular Git repositories; browser uploads have a 25 MiB limit. See [GitHub's large-file documentation](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github).
 
-Locally, `Sample_area.txt` contains 2,027,395,256 bytes and `Stacking.pkl` contains 160,623,466 bytes. `.gitignore` excludes the full mapping input, models, results and logs from Git; the original local files remain intact. The smaller training workbook is not excluded, but redistribution rights must be confirmed before committing it.
+Locally, `Sample_area.txt` contains 2,027,395,256 bytes and `Stacking.pkl` contains 160,623,466 bytes. The full mapping input, models, results and logs are included as example artifacts; original local files remain intact. Git LFS tracks the mapping input, `*.pkl` models and `*.tif` maps.
 
-Deposit the full inputs, models and manuscript results in a research archive with persistent links or a DOI. Alternatively, use Git LFS if appropriate for the account's storage limits and policies. LFS is not configured in this preparation. Do not use `git add -f` to force large artifacts into regular Git.
+Git LFS is configured for the large example artifacts. Use `git lfs pull` after cloning to retrieve them. A separate persistent research archive or DOI may be added later. Do not force large artifacts into regular Git.
 
 Add download links, licenses, checksums and restoration paths to `docs/DATA.md`. For example, generate SHA-256 checksums in PowerShell:
 
@@ -70,7 +70,7 @@ git status --short
 git diff --cached --stat
 ```
 
-Review the staged files. They should exclude the approximately 2 GB mapping input, model artifacts, Python environments, private information and unnecessary outputs. After review, continue with the actual repository URL in place of the example:
+Review the staged files. They should include the example inputs and scientific outputs, with large files represented by Git LFS pointers. Exclude Python caches, local environments and private configuration. After review, continue with the actual repository URL in place of the example:
 
 ```powershell
 git commit -m "Prepare PMmax research software release"

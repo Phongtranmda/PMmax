@@ -2,7 +2,7 @@
 
 PMmax is a Python research workflow for fitting regression models to maximum earthquake magnitude (`Mmax`) and exporting spatial predictions as GeoTIFF rasters. It contains two standalone scripts: training and evaluation, followed by prediction and raster export.
 
-**Release preparation status:** documentation and repository support files are prepared; remaining author metadata, data licensing, archive links, and a verified reproduction environment must be completed before public release. The software name PMmax is provisional. No manuscript DOI or public repository URL has been supplied.
+**Repository status:** source code, example inputs, trained models, output maps, evaluation tables, figures and training logs are included at https://github.com/Phongtranmda/PMmax. These are supplied example results, not a newly validated reproduction run. Remaining manuscript metadata, data licensing details and the verified reproduction environment still need documentation.
 
 ## Workflow
 
@@ -14,6 +14,19 @@ Sample_area.txt + Mmax_models/*.pkl
 ```
 
 Training fits Linear, Ridge, Lasso, ElasticNet, SVR, RandomForest, ExtraTrees, XGBoost, LightGBM, CatBoost, MLP and a PyTorch DeepNN, followed by a stacking ensemble. It exports evaluation metrics, fitted models, diagnostic plots, and feature-importance/SHAP results where supported. Mapping predicts with **every `.pkl` file** in the configured model directory and exports each prediction, their mean, standard deviation, and coefficient of variation.
+
+## Download the complete example and results
+
+Install [Git LFS](https://git-lfs.com/), then run:
+
+```bash
+git lfs install
+git clone https://github.com/Phongtranmda/PMmax.git
+cd PMmax
+git lfs pull
+```
+
+Use this method to obtain the actual large files; an archive or clone without LFS content may contain pointer files. The figures and evaluation workbooks in `Mmax_results/` can also be browsed or downloaded directly. Re-running the workflow can overwrite the supplied example outputs.
 
 ## Installation
 
@@ -48,7 +61,7 @@ Use the environment's Python executable wherever `python` appears below. `requir
    python "1. Training_Mmax.py"
    ```
 
-3. Obtain the full mapping input from the authors' archive (link pending), or create the small synthetic mapping example:
+3. Use the included full mapping input (download it with Git LFS as described below), or create the small synthetic mapping example:
 
    ```powershell
    python scripts/make_synthetic_mapping_example.py
@@ -77,7 +90,7 @@ These scripts use settings near the top of each file; they do not provide comman
 | `Mmax_results/` | Evaluation workbook, diagnostic plots and conditional importance outputs |
 | `Mmax_maps_results/` | One raster per model plus `Ensemble_Mean.tif`, `Uncertainty_STD.tif`, `CV.tif` |
 
-Generated model, result and log directories are excluded from Git. The full mapping input is also excluded because of its size. The original local files are retained. See the [user guide](docs/USER_GUIDE.md) for settings, exact outputs and troubleshooting.
+The repository includes `Mmax_models/`, `Mmax_results/`, `Mmax_maps_results/`, `catboost_info/` and all example inputs as supporting example results. Large models (`*.pkl`), maps (`*.tif`) and `Example data/Sample_area.txt` use Git LFS. The complete files total approximately 3.5 GiB. Original local files are retained. See the [user guide](docs/USER_GUIDE.md) for settings, exact outputs and troubleshooting.
 
 ## Interpretation and reproducibility
 
@@ -108,7 +121,7 @@ Generated model, result and log directories are excluded from Git. The full mapp
 
 **Associated manuscript:** in preparation for submission to *Computers & Geosciences*; not yet published. The manuscript title has not yet been supplied. No publication DOI is listed.
 
-Software citation metadata are provided in [CITATION.cff](CITATION.cff). Before release, add the confirmed software title and repository URL. Add release metadata and software DOI when available; add a paper citation only when its bibliographic details are verified. An unpublished manuscript does not need a fabricated DOI or publication year.
+Software citation metadata are provided in [CITATION.cff](CITATION.cff). Before a versioned release, confirm the software title. Add release metadata and software DOI when available; add a paper citation only when its bibliographic details are verified. An unpublished manuscript does not need a fabricated DOI or publication year.
 
 **License:** the software and its documentation are distributed under the [MIT License](LICENSE). Copyright (c) 2026 Tran Van Phong. Data and third-party dependencies require their own applicable terms; a software license does not establish permission to redistribute the example data.
 
